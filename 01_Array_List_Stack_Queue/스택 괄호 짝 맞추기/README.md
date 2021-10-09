@@ -8,8 +8,7 @@
     * 왼쪽 괄호 (이 등장하면 짝이 되는 오른쪽 괄호 )이 나중에 반드시 등장해야 하고, 두 괄호 안에 포함되는 괄호들도 짝이 맞아야 한다.
     * 짝이 맞는 괄호들은 즉시 시퀀스에서 빼버린다면, 오른쪽 괄호 )이 등장할 때, 자신의 왼쪽 괄호가 가장 최근에 짝을 못 맞춘 괄호로 기다리고 있어야 한다. 즉, 가장 최근에 짝을 못 맞춘 왼쪽 괄호가 가장 빨리 오른쪽 괄호와 짝을 맞추기 때문에 스택의 LIFO 원칙과 일치함
 4. Pseudo 코드
-<pre>
-<code>
+'''python
 def parChecker(parSeq):
     s = Stack()
     for each symbol in parSeq:
@@ -24,8 +23,7 @@ def parChecker(parSeq):
         return True
     else:
         return False
-</code>
-</pre>
+'''
 
 
 - 실현 코드 작성
