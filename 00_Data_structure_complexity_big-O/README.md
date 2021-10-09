@@ -100,7 +100,3 @@ T2(n) = 4n + 1     T1(n) = O(n)
 1. **최고차항만 남긴다.**
 2. **최고차항 계수(상수)는 생략**
 3. **Big-O(최고차항)**
-
-<figure>
-    https://www.notion.so/820b550d436f4192aa0feb6cabc680e2#ee37150a8004452aba794ee285f8a551
-</figure>
