@@ -1,13 +1,14 @@
 # Palindrome Check
 
-목적: 디큐(dequeue)-에 대한 강의내용을 참고하고 check_palindrome함수를 구현한다.
-입력: 길이가 0 이상인 문자열
-출력: Palindrome 일 때 True, 아니면 False
+목적: 디큐(dequeue)-에 대한 강의내용을 참고하고 check_palindrome함수를 구현한다.  
+입력: 길이가 0 이상인 문자열  
+출력: Palindrome 일 때 True, 아니면 False  
 
-1. deque 클래스 구현
-    멤버 변수:
-        items: 리스트
-    멤버 함수: 
+1. deque 클래스 구현  
+    멤버 변수:  
+        items: 리스트  
+    멤버 함수:  
+    
         a.__init__(self, s):  
         s 문자열을 받아서, 그 문자들의 리스트로 items를 초기화
         
