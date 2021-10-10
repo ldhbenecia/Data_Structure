@@ -5,7 +5,7 @@ class Stack:
 		self.items.append(val)
 	def pop(self):
 		try:	# pop할 아이템이 없으면
-			return self.items.pop()
+		    return self.items.pop()
 		except IndexError:	# indexError 발생
 			print("Stack is empty")
 	def top(self):
