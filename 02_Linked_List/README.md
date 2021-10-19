@@ -7,3 +7,5 @@
 - 배열의 원소들은 메모리의 연속된 공간에 할당, 연결리스트들은 메모리 곳곳에 흩어져 할당
 
 [한방향 연결리스트](https://www.notion.so/9f93bf04bfe44b33bfe6b147fed7b1ca)
+
+[양방향 연결리스트](https://www.notion.so/f726720a80864072ad8655192fad8725)
