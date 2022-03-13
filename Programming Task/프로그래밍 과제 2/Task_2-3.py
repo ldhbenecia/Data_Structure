@@ -20,7 +20,8 @@ for i in range(len(sum_list)): # 정답 점수만큼 반복
     if sum_list[j] > sum_list[j+1]:
       sum_list[j], sum_list[j+1] = sum_list[j+1], sum_list[j]
       id_list[j], id_list[j+1] = id_list[j+1], id_list[j] # 배점과 아이디를 연결해주기 위해 아이디 또한 뒤로 함께 보냄
-            
+# 둘 다 기본 sort()로 하면 예제 입력시 최고점은 20, id는 2222, 3333이 출력되기 때문에
+# 버블정렬로 해줌
             
 maxValue = sum_list[-1] # 가장 높은 점수 따로 저장
 id_count = sum_list.count(maxValue) # 가장 높은 점수가 몇개인지 저장 (최고점이 여러개일 경우를 위해)
