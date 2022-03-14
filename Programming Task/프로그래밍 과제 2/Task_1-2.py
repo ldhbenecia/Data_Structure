@@ -16,7 +16,7 @@ def percfect_add(n): # 위의 리스트에서 True 값을 추가하기 위한 �
     if perfect_number(n) == True: # 1부터 n까지 수 중 완전수 판별 함수에 True값이 되는 수는 result 리스트에 저장
       result.append(n)
       
-for i in range(1, n):
+for i in range(1, n+1):
   percfect_add(i) # 1부터 n까지 위 함수에 주입
 
 print(len(result)) # 완전수의 개수
