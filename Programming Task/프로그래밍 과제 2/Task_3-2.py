@@ -1,41 +1,3 @@
-'''
-word = input()
-word = word.lower()
-
-def isPalindrome(word):
-  if word == word[::-1]:
-    return True
-  else:
-    return False
-
-def longestPalindrome(word):
-  substring = []
-  length = 0
-  
-  for i in range(len(word)):
-    # 홀수 길이회문 확인
-    left, right = i, i
-    while left >= 0 and right < len(word) and word[left] == word[right]:
-      if (right - left + 1) > length:
-        substring.append(word[left:right+1])
-      left -= 1
-      right += 1
-      
-    
-  substring.sort(key = lambda x : len(x))
-  print(substring)
-      
-  for i in substring:
-    print(i, end=' ')
-
-  return substring
-
-longestPalindrome(word)
-'''
-
-# 위 코드는 실패
-
-
 word = input()
 word = word.lower()
 
@@ -62,7 +24,8 @@ def longestPalindrome(word): # 가장 긴 회문을 찾는 함수
   
   for i in range(len(substring)): # 모든 회문의 길이만큼 반복
     if length == len(substring[i]): # 가장 길이가 긴 길이 length와 substring의 회문의 길이 중 같은 것이 있다면
-      answer.append(substring[i]) # answer 리스트에 추가 해줌
+      if substring[i] not in answer: # 중복 문자 제거
+        answer.append(substring[i]) # answer 리스트에 추가 해줌
     
   answer.sort() # 그대로 예제를 시행하면 'bbb', 'bab', 'aba'가 나오기 때문에 이제 최종적으로 알파벳순 정렬
   
