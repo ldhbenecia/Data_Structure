@@ -25,18 +25,19 @@ class Stack:
   
 def Balance(s):
   S = Stack() # 스택 준비
+
   openBracket = '({[' # 여는 괄호
   closeBracket = ')}]' # 닫는 괄호
   count = 0
-      
+  bre = []
   # 괄호 대응 에러 
   for ch in s: # 입력 문자열을 하나씩 읽으며 반복
     count += 1
     if ch in openBracket: # 만약 여는 괄호면 스택에 push
+      bre.append(count)
       S.push(ch)
     elif ch in closeBracket: # 닫는 괄호이면
       if S.isEmpty(): # 스택이 비어있을 경우(여는 괄호가 없을 경우)
-        S.push(ch)
         if ch == ')':
           print(count-1, 'error1')
           return False
@@ -48,6 +49,7 @@ def Balance(s):
           return False
       else: # 스택이 비어있지 않으면
         openCh = S.pop() # pop() 변수 지정
+        bre.pop()
         if (ch == ')' and openCh != '('): # 여는 괄호가 아니면
           print(count-1, 'error1')
           return False
@@ -58,16 +60,21 @@ def Balance(s):
           print(count-1, 'error3')
           return False
         
+  for i in bre:
+    bre_int = []
+    bre_int.append(i-1)
+    
   if S.isEmpty() == False:
       if S.top() == '(':
-        print(count-1, 'error4')
-        return False
+          print(bre_int[-1], 'error4')
+          return False
       if S.top() == '{':
-        print(count-1, 'error5')
-        return False
+          print(bre_int[-1], 'error5')
+          return False
       if S.top() == '[':
-        print(count-1, 'error6')
-        return False
+          print(bre_int[-1], 'error6')
+          return False
+  
   
   # 짝이 맞는 경우 1을 출력하는 코드
   for ch in s: # 입력 문자열을 하나씩 읽으며 반복
@@ -85,3 +92,4 @@ def Balance(s):
     
 expr = input()
 Balance(expr)
+
