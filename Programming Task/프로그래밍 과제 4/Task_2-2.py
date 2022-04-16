@@ -4,7 +4,7 @@ class Queue:
     self.items = [None] * Queue.MAX_QSIZE
     self.front = -1
     self.rear = -1
-    self. size = 0
+    self.size = 0
   def isEmpty(self):
     return self.size == 0
   def enqueue(self, e):
