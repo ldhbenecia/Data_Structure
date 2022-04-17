@@ -1,4 +1,3 @@
-# stack_queue.py 에 저장
 class Stack:
   def __init__(self):
     self.items = []	# 데이터 저장을 위한 리스트 준비
