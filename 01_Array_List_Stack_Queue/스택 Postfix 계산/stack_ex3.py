@@ -1,28 +1,28 @@
 class Stack:
-    	def __init__(self):
-		self.items = []	# 데이터 저장을 위한 리스트 준비
-	def push(self, val):
-		self.items.append(val)
-	def pop(self):
-		try:	# pop할 아이템이 없으면
-		    return self.items.pop()
-		except IndexError:	# indexError 발생
-			print("Stack is empty")
-	def top(self):
-		try:
-			return self.items[-1]
-		except IndexError:
-			print("Stack is empty")
-	def __len__(self):	# len()로 호출하면 stack의 item 수 반환
- 		return len(self.items)
-	def isEmpty(self):
-		return self.__len__() == 0
+  def __init__(self):
+    self.items = []	# 데이터 저장을 위한 리스트 준비
+  def push(self, val):
+    self.items.append(val)
+  def pop(self):
+    try:	# pop할 아이템이 없으면
+      return self.items.pop()
+    except IndexError:	# indexError 발생
+      print("Stack is empty")
+  def top(self):
+    try:
+      return self.items[-1]
+    except IndexError:
+      print("Stack is empty")
+  def __len__(self):	# len()로 호출하면 stack의 item 수 반환
+    return len(self.items)
+  def isEmpty(self):
+    return self.__len__() == 0
 
 	
 def compute_postfix(postfix):
 	operand = Stack() 
 	token_list = postfix.split()
-	operators = ['*', '/', '+', '-','^'] # operator 리스트 만듦.
+	operators = ['*', '//', '+', '-','%'] # operator 리스트 만듦.
 	
 	for token in token_list:
 		if token not in operators: # 연산자가 아닐때. 즉 숫자일때 (0123456789)
@@ -42,11 +42,11 @@ def calc(i, op1, op2): #계산 함수
 		return op1 - op2
 	elif i == '*':
 		return op1 * op2
-	elif i == '/':
+	elif i == '//':
 		return op1 / op2
 	else:
-		return op1 ** op2
+		return op1 % op2
 	
 	
 postfix_eval = input()
-print("%.4f" %(compute_postfix(postfix_eval)))
+print("%d" %(compute_postfix(postfix_eval)))
