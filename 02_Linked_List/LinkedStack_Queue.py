@@ -49,22 +49,3 @@ class LinkedQueue:
       self.rear = None
     return e
   
-
-q = LinkedQueue()
-q.enqueue(10)
-q.enqueue(30)
-q.enqueue(20)
-q.enqueue(15)
-print(q.dequeue()) # 10, 제일 먼저 들어온게 10이므로 10부터 나감 (FIFO)
-print(q.dequeue()) # 30
-print(q.dequeue()) # 20
-
-
-s = LinkedStack()
-s.push(10)
-s.push(30)
-s.push(20)
-s.push(15)
-print(s.pop()) # 15, 가장 늦게 들어온게 15이므로 15부터 나감 (LIFO)
-print(s.pop()) # 20
-print(s.pop()) # 30
