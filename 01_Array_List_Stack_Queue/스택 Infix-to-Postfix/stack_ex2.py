@@ -59,3 +59,4 @@ def infix_to_postfix(infix):
 infix_expr = input()
 postfix_expr = infix_to_postfix(infix_expr)
 print(postfix_expr)
+
