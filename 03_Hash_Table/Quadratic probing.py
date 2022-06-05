@@ -38,4 +38,4 @@ class Dictionary:
         return self.valueList[i] # 탐색 성공
       j += 1
       i = (initialPos + j*j) % self.M # i의 다음 위치
-    return None
+    return None # 탐색 실패
