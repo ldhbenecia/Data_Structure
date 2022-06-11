@@ -15,7 +15,8 @@ def selection_sort(arr):
     
 
 # 삽입 정렬
-# 시간 복잡도 = O(n^2)
+# 시간 복잡도 = 최선의 경우 O(n) - 이미 정렬되어 있는 경우: 비교 n-1번
+# 시간 복잡도 = O(n^2) - 역순으로 정렬되어 있는 경우
 
 # 최적화 된 삽입정렬 코드
 def insertion_sort(arr): # swap 작업 없이 단순히 값들을 shift
@@ -59,7 +60,7 @@ def bubble_sort(arr):
 def bubble_sort2(arr):
   n = len(arr)
   
-  for i in range(n -1 , 0, -1):
+  for i in range(n-1 , 0, -1):
     for j in range(i):
       if arr[j] > arr[j+1]:
         arr[j], arr[j+1] = arr[j+1], arr[j]
