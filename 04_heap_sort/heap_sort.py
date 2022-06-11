@@ -32,16 +32,17 @@ def heapify(A, i, n): # rebuildHeap (혹은 downHeap)라고도 함
 def makeHeap(A):
   n = len(A)
   for i in range(n//2-1, -1, -1):
-    heapify(A, i, n)
+    heapify(A, i, n) # O(log n)
     
 # 힙 정렬
 def heapsort(A):
   n = len(A)
-  makeHeap(A) # 단계 1
+  # 단계 1 - O(n log n)
+  makeHeap(A)
   
-  # 단계 2
+  # 단계 2 - O(n log n)
   for last in range(n-1, 0, -1):
     A[last], A[0] = A[0], A[last]
-    heapify(A, 0, last)
+    heapify(A, 0, last) # O(log n)
   
   
