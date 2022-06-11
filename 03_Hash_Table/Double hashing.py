@@ -14,7 +14,7 @@ class Dictionary:
   def put(self, key, value): # 삽입 : quadratic probing
     initialPos = self.hashFunc(key) # 초기 위치
     i = initialPos
-    d = 7 - (key % 7) # 두 번째 해시 함수
+    d = 7 - (key % 7) # 두 번째 해시 함수, 충돌이 일어났을 때 사용
     j = 0
     while True:
       if self.keyList[i] == None: # 삽입 위치 발견
@@ -24,6 +24,8 @@ class Dictionary:
         return
       if self.keyList[i] == key: # 이미 key가 존재하면
         self.valueList[i] = value # 데이터만 갱신
+        # 충돌이 일어나서 d를 한번 더 수행했는데 또 충돌이 일어날 시 계속 d 수행
+        # 그러면서 j += 1
         return
       j += 1
       i = (initialPos + j*d) % self.M # i의 다음 위치
