@@ -10,10 +10,11 @@ class MaxHeap:
   def insert(self, value):
     self.heap.append(value)
     i = len(self.heap) - 1
-    while (i != 0 and value > self.heap[(i-1)//2]):
-      self.heap[i] = self.heap[(i-1)//2]
-      i = (i-1)//2
-    self.heap[i] = value
+    while (i != 0 and value > self.heap[(i-1)//2]): # 루트노드가 아니고 입력된 값이 부모노드보다 클 경우
+      self.heap[i] = self.heap[(i-1)//2] # 부모노드의 값을 내림, 제일 밑 자리 값 = 부모노드
+      i = (i-1)//2 # i를 부모노드 자리로 설정
+    self.heap[i] = value # 부모노드 자리에 입력된 value 값이 삽입
+    # 이와 같은 동작 반복 / 입력된 값이 부모노드보다 작을 경우 제일 밑에 추가되는 것이므로
     
   def delete(self): # down heap
     n = len(self.heap)
@@ -33,11 +34,11 @@ class MaxHeap:
       else:
         largerChild = leftChild
         
-    if value < self.heap[largerChild]: # largerChild의 값이 크면
-      self.heap[current] = self.heap[largerChild]
-      current = largerChild # current를 largerChild로 내림
-    else:
-      return
+      if value < self.heap[largerChild]: # largerChild의 값이 크면
+        self.heap[current] = self.heap[largerChild]
+        current = largerChild # current를 largerChild로 내림
+      else:
+        break
     
     self.heap[current] = value
     return maxValue
