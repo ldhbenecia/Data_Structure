@@ -34,6 +34,9 @@ print(heap) # [4, 7]
 print(heap[0]) # 4
 # 리스트 인덱스 접근 방식과 동일
 
+# item 삽입 후 delete_min() 수행
+print(heapq.heappushpop(heap, 3)) # 3
+print(heap) # [4, 7], 3이 들어갔다가 pop됨
 
 # 기존 리스트를 힙으로 변환
 heap = [4, 1, 7, 3, 8, 5]
