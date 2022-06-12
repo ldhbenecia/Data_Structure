@@ -22,8 +22,6 @@ def binarySearch1(a, key, left, right):
     return False
   else:
     mid = (left + right) // 2
-    print(a[mid])
-     
     if key == a[mid]: # 탐색 성공
       return True
     elif key < a[mid]:
