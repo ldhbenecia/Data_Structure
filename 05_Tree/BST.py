@@ -1,6 +1,3 @@
-from lib2to3.pytree import Node
-
-
 class TreeNode:
   def __init__(self, key, value, left = None, right = None):
     self.key = key # 키(key)
