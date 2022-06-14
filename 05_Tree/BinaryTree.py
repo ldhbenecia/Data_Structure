@@ -1,6 +1,3 @@
-from xml.etree.ElementTree import _ElementFactory
-
-
 class Tnode:
   def __init__(self, data, left = None, right = None):
     self.data = data
