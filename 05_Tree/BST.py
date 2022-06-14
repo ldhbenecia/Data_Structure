@@ -63,8 +63,10 @@ class BST:
       if node.left == None: # node의 왼쪽 자식노드가 없을 경우
         return node.right
       
+      # 두 개의 자식을 가진 노드 삭제
+      # 삭제할 위치에 오른쪽 서브트리의 가장 작은 노드가 들엉가면 이진탐색트리 조건을 계속 만족
       rightMinNode = self._minNode(node.right) # node의 오른쪽 서브트리에서 최소키의 노드를 찾음
       node.key = rightMinNode.key # node의 오른쪽 서브트리에서 최소키의 노드를 복사 node에 복사
-      node.value = rightMinNode.value
+      node.value = rightMinNode.value # key, value 둘 다 복사해서 옮김
       node.right = self._deleteSubtree(node.right, rightMinNode.key) # node의 오른쪽 서브트리에서 최소키의 노드를 삭제
       return node
