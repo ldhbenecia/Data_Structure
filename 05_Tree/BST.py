@@ -10,17 +10,17 @@ class BST:
     self.root = None
     
   def search(self, key): # 탐색 연산
-    return self._searchSubree(self.root, key)
+    return self._searchSubtree(self.root, key)
   
-  def _searchSubree(self, node, key):
+  def _searchSubtree(self, node, key):
     if node is None:
       return None
     elif key == node.key:
       return node.value
     elif key < node.key:
-      return self._searchSubree(node.left, key)
+      return self._searchSubtree(node.left, key)
     else:
-      return self._searchSubree(node.right, key)
+      return self._searchSubtree(node.right, key)
     
   def insert(self, key, value): # 삽입 연산
     self.root = self._insertSubtree(self.root, key, value)
