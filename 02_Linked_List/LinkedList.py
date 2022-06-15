@@ -65,11 +65,11 @@ class LinkedList:
       
   def find(self, item):
     pos = 0
-    current = self.head
-    while current is not None:
-      if current.data == item:
+    node = self.head
+    while node is not None:
+      if node.data == item:
         return pos
       else:
         pos += 1
-        current = current.link
+        node = node.link
     return -1
